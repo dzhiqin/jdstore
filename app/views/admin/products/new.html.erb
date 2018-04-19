@@ -1,0 +1,11 @@
+<h2>new product</h2>
+<%= simple_form_for [:admin,@product] do |f| %>
+  <div class="group">
+    <%= f.input :title %>
+  </div>
+  <%= f.input :description %>
+  <%= f.input :quantity %>
+  <%= f.input :price %>
+  <%= f.input :image,as: :file %>
+  <%= f.submit 'submit',data:{disable_with:"submitting..."} %>
+<% end %>
