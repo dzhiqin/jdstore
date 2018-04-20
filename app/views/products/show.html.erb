@@ -21,7 +21,7 @@
   </div>
   <div class="pull-right">
     <% if @product.quantity.present? && @product.quantity>0 %>
-      <%= link_to 'add to cart',"#",class:"btn btn-primary" %>
+      <%= link_to 'add to cart',add_to_cart_product_path(@product),method: :post,class:"btn btn-primary" %>
     <% else %>
       sale out
     <% end %>
