@@ -16,7 +16,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <%= link_to content_tag(:i,"Cart(#{current_cart.products.count})",class:"fa fa-shopping-cart"),"#" %>
+          <%= link_to content_tag(:i,"Cart(#{current_cart.products.count})",class:"fa fa-shopping-cart"),carts_path %>
         </li>
         <% if !current_user %>
           <li><%= link_to 'sign up',new_user_registration_path %></li>
