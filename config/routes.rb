@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root "products#index"
   namespace :admin do
     resources :products
+    resources :orders
   end
   resources :products do
     member do
@@ -17,5 +18,13 @@ Rails.application.routes.draw do
     end
   end
   resources :cart_items
-  resources :orders
+  resources :orders do
+    member do
+      post :pay_with_alipay
+      post :pay_with_weixin
+    end
+  end
+  namespace :account do
+    resources :orders
+  end
 end
